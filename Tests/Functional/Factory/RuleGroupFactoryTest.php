@@ -17,9 +17,9 @@ namespace Elcodi\RuleBundle\Tests\Functional\Factory;
 use Elcodi\CoreBundle\Tests\WebTestCase;
 
 /**
- * Class RuleFactoryTest
+ * Class RuleGroupFactoryTest
  */
-class RuleFactoryTest extends WebTestCase
+class RuleGroupFactoryTest extends WebTestCase
 {
     /**
      * Returns the callable name of the service
@@ -28,17 +28,17 @@ class RuleFactoryTest extends WebTestCase
      */
     public function getServiceCallableName()
     {
-        return 'elcodi.core.rule.factory.rule';
+        return 'elcodi.core.rule.factory.rule_group';
     }
 
     /**
-     * Test rule factory provider
+     * Test rule_group factory provider
      */
     public function testFactoryProvider()
     {
         $this->assertInstanceOf(
-            $this->container->getParameter('elcodi.core.rule.entity.rule.class'),
-            $this->container->get('elcodi.core.rule.entity.rule.instance')
+            $this->container->getParameter('elcodi.core.rule.entity.rule_group.class'),
+            $this->container->get('elcodi.core.rule.entity.rule_group.instance')
         );
     }
 }
