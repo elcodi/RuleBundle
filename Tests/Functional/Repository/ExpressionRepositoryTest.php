@@ -12,14 +12,14 @@
  * @version ##version_placeholder##
  */
 
-namespace Elcodi\RuleBundle\Tests\Functional\Factory;
+namespace Elcodi\RuleBundle\Tests\Functional\Repository;
 
 use Elcodi\CoreBundle\Tests\WebTestCase;
 
 /**
- * Class ExpressionFactoryTest
+ * Class ExpressionRepositoryTest
  */
-class ExpressionFactoryTest extends WebTestCase
+class ExpressionRepositoryTest extends WebTestCase
 {
     /**
      * Returns the callable name of the service
@@ -29,30 +29,30 @@ class ExpressionFactoryTest extends WebTestCase
     public function getServiceCallableName()
     {
         return [
-            'elcodi.core.rule.factory.expression',
-            'elcodi.factory.expression',
+            'elcodi.core.rule.repository.expression',
+            'elcodi.repository.expression',
         ];
     }
 
     /**
-     * Test expression factory provider
+     * Test expression repository provider
      */
     public function testFactoryProvider()
     {
         $this->assertInstanceOf(
-            $this->container->getParameter('elcodi.core.rule.entity.expression.class'),
-            $this->container->get('elcodi.core.rule.entity.expression.instance')
+            $this->container->getParameter('elcodi.core.rule.repository.expression.class'),
+            $this->container->get('elcodi.core.rule.repository.expression')
         );
     }
 
     /**
-     * Test expression factory provider alias
+     * Test expression repository provider alias
      */
     public function testFactoryProviderAlias()
     {
         $this->assertInstanceOf(
-            $this->container->getParameter('elcodi.core.rule.entity.expression.class'),
-            $this->container->get('elcodi.entity.expression.instance')
+            $this->container->getParameter('elcodi.core.rule.repository.expression.class'),
+            $this->container->get('elcodi.repository.expression')
         );
     }
 }
