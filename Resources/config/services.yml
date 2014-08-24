@@ -1,0 +1,20 @@
+services:
+
+    #
+    # Managers
+    #
+    elcodi.core.rule.service.rule_manager:
+        class: %elcodi.core.rule.service.rule_manager.class%
+        arguments:
+            expression_language: @elcodi.core.rule.service.expression_language
+            abstract_rule_repository: @elcodi.core.rule.repository.abstract_rule
+        configurator: ["@elcodi.core.rule.configuration.rule_manager", configureRuleManager]
+
+    elcodi.rule_manager:
+        alias: elcodi.core.rule.service.rule_manager
+
+    #
+    # External
+    #
+    elcodi.core.rule.service.expression_language:
+        class: %elcodi.core.rule.service.expression_language.class%
